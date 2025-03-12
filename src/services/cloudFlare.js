@@ -15,6 +15,12 @@ class CloudFlare extends Client {
       formData
     );
   }
+
+  deleteImage(imageId) {
+    return this.client.delete(
+      `/accounts/6749431195f4f2593ec006a76916e4e1/images/v1/${imageId}`
+    );
+  }
 }
 
 module.exports = CloudFlare;
