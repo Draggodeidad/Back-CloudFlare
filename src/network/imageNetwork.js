@@ -16,7 +16,12 @@ async function onDeleteImage(request, response) {
   const result = await Controller.onDeleteImage(image_id);
   response.send(result.data);
 }
+async function onGetImages(request, response) {
+  const result = await Controller.onGetImages();
+  response.send(result.data);
+}
 
+router.get("/list", onGetImages);
 router.delete("/delete/:image_id", onDeleteImage);
 
 router.post("/upload", upload.single("file"), onNewImage);
