@@ -21,6 +21,12 @@ class CloudFlare extends Client {
       `/accounts/6749431195f4f2593ec006a76916e4e1/images/v1/${imageId}`
     );
   }
+
+  getImages() {
+    return this.client.get(
+      "/accounts/6749431195f4f2593ec006a76916e4e1/images/v1"
+    );
+  }
 }
 
 module.exports = CloudFlare;
