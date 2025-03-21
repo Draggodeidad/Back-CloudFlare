@@ -11,6 +11,13 @@ async function onNewImage(request, response) {
   response.send(result.data);
 }
 
+async function OnDeleteImage(request, response) {
+  const { imageId } = request.params;
+  const result = await Controller.OnDeleteImage(imageId);
+  response.send(result.data);
+}
+
+router.delete("/:imageId", OnDeleteImage);
 router.post("/upload", upload.single("file"), onNewImage);
 
 module.exports = router;
